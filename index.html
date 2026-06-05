@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Masud Rana Sheum - Neon Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,sans-serif}
+body{background:#050505;color:#fff;overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;background:
+radial-gradient(circle at 20% 20%,rgba(57,255,20,.18),transparent 25%),
+radial-gradient(circle at 80% 70%,rgba(57,255,20,.12),transparent 25%);z-index:-1}
+nav{position:fixed;top:0;width:100%;padding:18px 8%;display:flex;justify-content:space-between;background:#0b0b0bcc;backdrop-filter:blur(10px)}
+nav a{color:#39ff14;text-decoration:none;margin-left:18px}
+.logo{color:#39ff14;font-weight:700}
+section{min-height:100vh;padding:100px 8%;display:flex;align-items:center}
+.hero h1{font-size:72px}
+.hero span,.title{color:#39ff14;text-shadow:0 0 15px #39ff14}
+.typing{font-size:28px;margin:15px 0;color:#7dff68}
+.card{background:#111;border:1px solid #39ff1444;border-radius:20px;padding:25px;box-shadow:0 0 20px #39ff1415}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.skill{text-align:center}
+h2{font-size:42px;margin-bottom:25px;color:#39ff14}
+.timeline .item{border-left:3px solid #39ff14;padding-left:20px;margin:20px 0}
+.btn{display:inline-block;margin-top:20px;padding:12px 25px;border:1px solid #39ff14;color:#39ff14;text-decoration:none;border-radius:30px}
+.btn:hover{background:#39ff14;color:#000}
+footer{text-align:center;padding:25px;color:#999}
+@media(max-width:768px){.hero h1{font-size:42px}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">MS</div>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section>
+<div class="hero">
+<h1>MD. MASUD RANA <br><span>SHEUM</span></h1>
+<div class="typing" id="typing"></div>
+<div class="card">
+Passionate Web Developer focused on modern responsive websites.
+</div>
+<a class="btn" href="#about">Explore</a>
+</div>
+</section>
+
+<section id="about">
+<div>
+<h2>About Me</h2>
+<div class="card">
+Diploma in Engineering completed. Currently studying BSc in CSE at Bangladesh University and continuously learning web technologies.
+</div>
+</div>
+</section>
+
+<section id="skills">
+<div style="width:100%">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card skill">HTML5</div>
+<div class="card skill">CSS3</div>
+<div class="card skill">JavaScript</div>
+<div class="card skill">Bootstrap</div>
+<div class="card skill">Tailwind CSS</div>
+<div class="card skill">React</div>
+<div class="card skill">Git</div>
+<div class="card skill">GitHub</div>
+</div>
+</div>
+</section>
+
+<section id="education">
+<div>
+<h2>Education</h2>
+<div class="card timeline">
+<div class="item"><b>SSC</b></div>
+<div class="item"><b>Diploma in Engineering</b> - Completed</div>
+<div class="item"><b>BSc in CSE</b> - Running</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div>
+<h2>Contact</h2>
+<div class="card">
+Email: sheum@gamil.com<br><br>
+Phone: +880 1303-597239
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 MD. MASUD RANA SHEUM
+</footer>
+
+<script>
+const w=[
+"Web Developer",
+"Frontend Enthusiast",
+"Future Full Stack Developer"
+];
+
+let i=0,j=0,d=false;
+
+function type(){
+let t=w[i];
+document.getElementById('typing').innerHTML=t.substring(0,j);
+
+if(!d){
+j++;
+if(j>t.length)d=true;
+}
+else{
+j--;
+if(j==0){
+d=false;
+i=(i+1)%w.length;
+}
+}
+
+setTimeout(type,d?60:120);
+}
+
+type();
+</script>
+
+</body>
+</html>
